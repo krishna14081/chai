@@ -1,0 +1,36 @@
+:root{
+  --chalk:#E8EEE4; --cardamom:#1F3A2E; --saffron:#F2A900; --milk:#FBFCF8; --mute:#5B6F63;
+  --bg:var(--chalk); --ink:var(--cardamom); --card:var(--milk); --line:#C9D4C6;
+}
+@media (prefers-color-scheme:dark){
+  :root{--bg:#14231C; --ink:#EAF1E6; --card:#1C3227; --mute:#9DB3A5; --line:#2E4A3B}
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font-family:"Hanken Grotesk",system-ui,sans-serif;line-height:1.55;
+  padding:env(safe-area-inset-top) 20px env(safe-area-inset-bottom)}
+main{max-width:420px;margin:0 auto;padding:44px 0 48px;text-align:center}
+.who img{border-radius:50%;border:3px solid var(--saffron);display:block;margin:0 auto 10px;object-fit:cover}
+.handle{margin:0;color:var(--mute);font-size:.95rem}
+h1{font-family:"Bricolage Grotesque",system-ui,sans-serif;font-weight:800;font-size:clamp(2.6rem,12vw,3.4rem);
+  line-height:1;letter-spacing:-.03em;margin:28px 0 14px}
+.lede{margin:0 auto 32px;max-width:34ch;color:var(--mute)}
+
+/* the chit: a tea-stall bill slip with a torn bottom edge */
+.chit{background:var(--card);border-radius:14px;padding:26px 22px 34px;border-top:6px solid var(--saffron);
+  box-shadow:0 1px 0 var(--line),0 14px 30px -18px rgba(0,0,0,.35);
+  -webkit-mask:conic-gradient(from -45deg at bottom,#0000,#000 1deg 89deg,#0000 90deg) 50%/14px 100%;
+  mask:conic-gradient(from -45deg at bottom,#0000,#000 1deg 89deg,#0000 90deg) 50%/14px 100%}
+.qr{width:220px;height:220px;max-width:100%;border-radius:8px;background:#fff;padding:8px;image-rendering:pixelated}
+.scan{margin:12px 0 18px;font-weight:600}
+.vpa{display:flex;gap:8px;align-items:center;justify-content:center;flex-wrap:wrap;margin-bottom:6px}
+code{font-size:.9rem;background:color-mix(in srgb,var(--ink) 8%,transparent);padding:6px 10px;border-radius:6px;word-break:break-all}
+button{font:inherit;font-weight:600;cursor:pointer;border-radius:999px}
+button{background:none;color:var(--ink);border:1.5px solid var(--ink);padding:5px 14px}
+.tip{margin:16px auto 0;max-width:30ch;font-size:.85rem;color:var(--mute)}
+.read{margin:30px 0 6px}
+.read a{color:var(--ink);font-weight:600;text-underline-offset:4px;text-decoration-color:var(--saffron);text-decoration-thickness:2px}
+.foot{margin:0;color:var(--mute);font-size:.85rem}
+a:focus-visible,button:focus-visible{outline:3px solid var(--saffron);outline-offset:3px}
+@media (prefers-reduced-motion:no-preference){.chit{animation:in .5s ease-out both}
+@keyframes in{from{opacity:0;transform:translateY(10px)}}}
